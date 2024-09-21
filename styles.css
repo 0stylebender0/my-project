@@ -14,7 +14,7 @@ body {
     justify-content: center;
     align-items: center;
     position: relative;
-    width: 80vw; /* Use viewport width for responsiveness */
+    width: 300px; /* Use viewport width for responsiveness */
     max-width: 300px; /* Max width for larger screens */
     height: auto; /* Adjust height automatically */
 }
