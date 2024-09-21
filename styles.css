@@ -38,10 +38,10 @@ body {
 
 .text-overlay {
     position: absolute;
-    top: 80%; /* Adjusted for responsiveness */
-    left: 50%; /* Centered */
+    top: -60px; /* Adjusted for responsiveness */
+    left: 20%; /* Centered */
     transform: translate(-50%, -50%); /* Centering adjustment */
-    font-size: 20px; /* Smaller font size for mobile */
+    font-size: 30px; /* Smaller font size for mobile */
     color: rgba(162, 0, 255, 0.603);
     font-weight: bold;
     font-family: 'Magic Night', sans-serif;
