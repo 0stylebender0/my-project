@@ -14,8 +14,9 @@ body {
     justify-content: center;
     align-items: center;
     position: relative;
-    width: 300px;
-    height: 300px;
+    width: 80vw; /* Use viewport width for responsiveness */
+    max-width: 300px; /* Max width for larger screens */
+    height: auto; /* Adjust height automatically */
 }
 
 .wrapper {
@@ -37,13 +38,14 @@ body {
 
 .text-overlay {
     position: absolute;
-    top: 250px;
-    left: -55px;
-    font-size: 50px;
+    top: 80%; /* Adjusted for responsiveness */
+    left: 50%; /* Centered */
+    transform: translate(-50%, -50%); /* Centering adjustment */
+    font-size: 20px; /* Smaller font size for mobile */
     color: rgba(162, 0, 255, 0.603);
     font-weight: bold;
     font-family: 'Magic Night', sans-serif;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     animation: fadeMove 5s infinite;
     z-index: 10;
 }
@@ -55,8 +57,9 @@ body {
 
 .container {
     position: relative;
-    width: 200px;
-    height: 200px;
+    width: 80%; /* Responsive width */
+    max-width: 200px; /* Max width for larger screens */
+    height: auto; /* Adjust height automatically */
     background-color: lightblue;
 }
 
@@ -67,29 +70,23 @@ body {
     border-radius: 10px;
     position: absolute;
     top: 50px;
-    left: 90px;
+    left: 50%; /* Centered */
     transform-origin: bottom center;
+    transform: translateX(-50%); /* Centering adjustment */
     animation: sway 3s infinite ease-in-out;
 }
 
-.stem1 {
-    transform: rotate(0deg);
-    animation-delay: 0s;
-}
-
 .stem2 {
-    transform: rotate(15deg);
     animation-delay: 0.5s;
 }
 
 .stem3 {
-    transform: rotate(-15deg);
     animation-delay: 1s;
 }
 
 .petal {
-    width: 50px;
-    height: 50px;
+    width: 40px; /* Smaller petals for mobile */
+    height: 40px; /* Smaller petals for mobile */
     background-color: yellow;
     position: absolute;
     border-radius: 50%;
@@ -102,7 +99,8 @@ body {
     border-radius: 50%;
     position: absolute;
     top: 0px;
-    left: 0px;
+    left: 50%; /* Centered */
+    transform: translateX(-50%); /* Centering adjustment */
 }
 
 @keyframes bloom {
@@ -114,27 +112,18 @@ body {
     }
 }
 
-@keyframes tie {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(15deg);
-    }
-}
-
 @keyframes fadeMove {
     0% {
         opacity: 0;
-        transform: translateY(20px); /* El texto comienza más abajo */
+        transform: translateY(20px);
     }
     50% {
         opacity: 1;
-        transform: translateY(0); /* El texto se mueve a su posición normal */
+        transform: translateY(0);
     }
     100% {
         opacity: 0;
-        transform: translateY(-20px); /* El texto sube y desaparece */
+        transform: translateY(-20px);
     }
 }
 
@@ -143,20 +132,35 @@ body {
         transform: rotate(0deg);
     }
     25% {
-        transform: rotate(25deg); /* Se inclina ligeramente hacia un lado */
+        transform: rotate(25deg);
     }
     50% {
-        transform: rotate(0deg); /* Vuelve a la posición original */
+        transform: rotate(0deg);
     }
     75% {
-        transform: rotate(-25deg); /* Se inclina ligeramente hacia el otro lado */
+        transform: rotate(-25deg);
     }
     100% {
-        transform: rotate(0deg); /* Regresa a la posición original */
+        transform: rotate(0deg);
     }
 }
 
 @font-face {
     font-family: 'Magic Night';
-    src: url('fonts/magic-night.ttf') format('truetype');  /* Adjust the path to the actual location */
+    src: url('fonts/magic-night.ttf') format('truetype'); /* Adjust the path to the actual location */
+}
+
+/* Media Queries for Mobile Devices */
+@media (max-width: 768px) {
+    .title {
+        font-size: 18px; /* Smaller title for mobile */
+    }
+
+    .text-overlay {
+        font-size: 16px; /* Even smaller text overlay */
+    }
+    
+    .stem1, .stem2, .stem3 {
+        width: 15px; /* Thinner stems for mobile */
+    }
 }
